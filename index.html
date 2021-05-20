@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/simple-grid-min.css" />
+    <link rel="stylesheet" href="./styles/registration_number.css" />
+    <title>Registration Number</title>
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-12">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <h2 style="text-align: center">
+                <strong style="color: black">Registration Numbers</strong>
+              </h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-10">
+              <input
+                type="text"
+                class="text-input"
+                placeholder="Please enter registration number"
+              />
+            </div>
+            <div class="col-2">
+              <button type="button" class="add-btn">Add</button>
+            </div>
+          </div>
+          <br />
+          <br />
+          <div class="row">
+            <div class="col-10">
+              <strong style="font-size: large"> Filter by Town: </strong>
+              <div class="dropdown">
+                <button class="dropbtn">Town</button>
+                <div class="dropdown-content">
+                  <a href="#">Cape Town</a>
+                  <a href="#">Paarl</a>
+                  <a href="#">Goerge</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-2">
+              <button type="button" class="add-btn">View all</button>
+            </div>
+          </div>
+          <div class="row">
+            <div style="text-align: center" class="col-12">
+              <span class="message"></span>
+            </div>
+            <div style="text-align: center" class="col-12">
+              <span class="error"></span>
+            </div>
+          </div>
+          <br />
+          <!-- <div class="row">
+            <div class="col-10">
+              <strong style="font-size: large"
+                >Number of greeted people:
+              </strong>
+              <div class="circle">
+                <span class="circle__content">0</span>
+              </div>
+            </div>
+            <div class="col-2">
+              <button type="button" class="reset-btn">Reset Counter</button>
+            </div>
+          </div> -->
+        </div>
+        <br />
+      </div>
+    </div>
+  </body>
+</html>
