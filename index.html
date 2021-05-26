@@ -35,15 +35,15 @@
           <br />
           <div class="row">
             <div class="col-10">
-              <strong style="font-size: large"> Filter by Town: </strong>
-              <div class="dropdown">
-                <button class="dropbtn">Town</button>
-                <div class="dropdown-content">
-                  <a href="#">Cape Town</a>
-                  <a href="#">Paarl</a>
-                  <a href="#">Goerge</a>
-                </div>
-              </div>
+              <form>
+                <label>Filter by Town:</label>
+                <select name="town" class="town">
+                  <option value="">Select Town</option>
+                  <option value="capetown">Cape Town</option>
+                  <option value="paarl">Paarl</option>
+                  <option value="Bellville">Bellville</option>
+                </select>
+              </form>
             </div>
             <div class="col-2">
               <button type="button" class="add-btn">View all</button>
@@ -51,10 +51,10 @@
           </div>
           <div class="row">
             <div style="text-align: center" class="col-12">
-              <span class="message"></span>
+              <span id="message"></span>
             </div>
             <div style="text-align: center" class="col-12">
-              <span class="error"></span>
+              <span id="error"></span>
             </div>
           </div>
           <br />
@@ -76,4 +76,6 @@
       </div>
     </div>
   </body>
+  <script src="./registration_number.js"></script>
+  <script src="./registration_number_dom.js"></script>
 </html>

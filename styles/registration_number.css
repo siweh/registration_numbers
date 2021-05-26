@@ -96,3 +96,31 @@ body{
     background-color: #db9f02;
     /* box-shadow: 0px 15px 20px #db9f02; */
     }
+
+    #error {
+        color: red;
+    }
+
+    .town {
+        background-color: #eede01;
+        box-shadow: 10px 10px 15px #be7c00;
+        border-radius: 15px;
+        color: black;
+        padding: 10px 20px;
+        font-size: 16px;
+        letter-spacing: 2.5px;
+        border: none;
+    }
+    .chip {
+        display: inline-block;
+        padding: 0 25px;
+        height: 50px;
+        font-size: 16px;
+        line-height: 50px;
+        border-radius: 25px;
+        background-color: silver;
+        border: 2px solid black;
+        margin: 0 1em 1em;
+    }
+      
+    
