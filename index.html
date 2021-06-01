@@ -38,15 +38,15 @@
               <form>
                 <label>Filter by Town:</label>
                 <select name="town" class="town">
-                  <option value="">Select Town</option>
+                  <option value="all">Select Town</option>
                   <option value="capetown">Cape Town</option>
                   <option value="paarl">Paarl</option>
-                  <option value="Bellville">Bellville</option>
+                  <option value="bellville">Bellville</option>
                 </select>
               </form>
             </div>
             <div class="col-2">
-              <button type="button" class="add-btn">View all</button>
+              <button type="button" class="reset-btn">Reset</button>
             </div>
           </div>
           <div class="row">
@@ -54,7 +54,7 @@
               <span id="message"></span>
             </div>
             <div style="text-align: center" class="col-12">
-              <span id="error"></span>
+              <span class="error"></span>
             </div>
           </div>
           <br />
@@ -76,6 +76,7 @@
       </div>
     </div>
   </body>
+  <script src="./local-storage.js"></script>
   <script src="./registration_number.js"></script>
   <script src="./registration_number_dom.js"></script>
 </html>
