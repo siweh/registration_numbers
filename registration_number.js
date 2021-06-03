@@ -6,23 +6,28 @@ function RegistrationNumbers(registrationNumbersList = []) {
     var filteredRegNumbers = [];
     function addRegistrationNumber(regNumber) {
         //console.log(regNumber);
-        //var numberRegx = /^[A-Z]{2}[0-9]{5}$/;
+        //var numberRegx = /^[A-Z]{2}\s[0-9]{3}[A-Z]{2}\s[0-9]{3}$/;
 
 
         if (!registrationNumbers.includes(regNumber.toLowerCase())){
-            if (regNumber.startsWith('ca') || regNumber.startsWith('cj') || regNumber.startsWith('cy')){
-                errMessage = '';
-                registrationNumbers.push(regNumber.toLowerCase());
+            if(regNumber.length >= 10){
+                errMessage = 'Registration number should not be this long';
             }else{
-                errMessage = 'Invalid registration number';
+                if (regNumber.startsWith('ca') || regNumber.startsWith('cj') || regNumber.startsWith('cy')){
+                    errMessage = '';
+                    registrationNumbers.push(regNumber.toLowerCase());
+                }else{
+                    errMessage = 'Invalid registration number';
+                }
             }
+        }else{
+            errMessage = 'Registration number already exists';
         }
 
         if (regNumber === ''){
             errMessage = 'Please enter registration number';
         }
-        
-        console.log(registrationNumbers);
+        //console.log(registrationNumbers);
     }
 
    

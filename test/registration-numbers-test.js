@@ -25,6 +25,23 @@ describe("Registration numbers project", function(){
         })
     });
 
+    context("Given the same registration numbers", function(){
+        const registrationNumbers = RegistrationNumbers();
+        it("should return an error saying registration number already exists", function(){
+            registrationNumbers.addRegistrationNumber('ca123');
+            registrationNumbers.addRegistrationNumber('ca123');
+            assert.equal('Registration number already exists', registrationNumbers.getErrorMessage());
+        });
+    });
+
+    context("Given a lengthy registration number", function(){
+        const registrationNumbers = RegistrationNumbers();
+        it("should return an error about the length of the registration number", function(){
+            registrationNumbers.addRegistrationNumber('cy123456789101112');
+            assert.equal('Registration number should not be this long', registrationNumbers.getErrorMessage());
+        })
+    })
+
     context("Formatting registration numbers", function(){
         const registrationNumbers = RegistrationNumbers();
         it("should be able to format registration numbers", function(){

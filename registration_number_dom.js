@@ -41,7 +41,7 @@ function displayRegistrationNumbers(regNumbsrsList = []) {
         regNumberDisplay.innerHTML = '';
         for (let i = 0; i < regNumbsrsList.length; i++) {
             var registrationNumberDisplay = registrationNumbers.formatRegistrationNumber(regNumbsrsList[i]);
-            console.log(registrationNumberDisplay);
+            //console.log(registrationNumberDisplay);
             regNumberDisplay.append(createChip(registrationNumberDisplay));
         }
     }
@@ -52,7 +52,7 @@ function filterByTown() {
     regNumberDisplay.innerHTML = '';
     
     var regNumbsrsList = registrationNumbers.getRegistrationNumbers(getTownSelected);
-    console.log(regNumbsrsList);
+    //console.log(regNumbsrsList);
     displayRegistrationNumbers(regNumbsrsList);
 }
 
