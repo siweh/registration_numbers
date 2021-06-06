@@ -32,7 +32,7 @@ function RegistrationNumbers(registrationNumbersList = []) {
 
    
     function formatRegistrationNumber(regNumberMsg) {
-        return regNumberMsg.substring(0,2).toUpperCase() +' '+ regNumberMsg.slice(2);
+        return regNumberMsg.substring(0,2).toUpperCase() +' '+ regNumberMsg.slice(6) + '-' + regNumberMsg.slice(6);
     }
 
     function getRegistrationNumbers(town = 'all') {
