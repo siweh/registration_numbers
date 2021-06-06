@@ -10,14 +10,18 @@ function RegistrationNumbers(registrationNumbersList = []) {
 
 
         if (!registrationNumbers.includes(regNumber.toLowerCase())){
-            if(regNumber.length >= 10){
+            if(regNumber.length > 8){
                 errMessage = 'Registration number should not be this long';
             }else{
-                if (regNumber.startsWith('ca') || regNumber.startsWith('cj') || regNumber.startsWith('cy')){
-                    errMessage = '';
-                    registrationNumbers.push(regNumber.toLowerCase());
+                if(regNumber.length < 8){
+                    errMessage = 'Registration contains atleast 6 digits';
                 }else{
-                    errMessage = 'Invalid registration number';
+                    if (regNumber.startsWith('ca') || regNumber.startsWith('cj') || regNumber.startsWith('cy')){
+                        errMessage = '';
+                        registrationNumbers.push(regNumber.toLowerCase());
+                    }else{
+                        errMessage = 'Invalid registration number';
+                    }
                 }
             }
         }else{
@@ -32,7 +36,10 @@ function RegistrationNumbers(registrationNumbersList = []) {
 
    
     function formatRegistrationNumber(regNumberMsg) {
-        return regNumberMsg.substring(0,2).toUpperCase() +' '+ regNumberMsg.slice(6) + '-' + regNumberMsg.slice(6);
+        // console.log(regNumberMsg.substring(0,2).toUpperCase());
+        // console.log(regNumberMsg.substring(2,5));
+        // console.log(regNumberMsg.substring(5,8));
+        return regNumberMsg.substring(0,2).toUpperCase() + ' ' + regNumberMsg.substring(2,5) + '-' + regNumberMsg.substring(5,8);
     }
 
     function getRegistrationNumbers(town = 'all') {

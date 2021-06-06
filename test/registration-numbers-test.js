@@ -4,16 +4,24 @@ describe("Registration numbers project", function(){
     context("Given a valid registration number", function(){
         const registrationNumbers = RegistrationNumbers();
         it("should be able to return the added registration number", function(){
-            registrationNumbers.addRegistrationNumber('ca1233');
-            assert.equal('CA 1233', registrationNumbers.formatRegistrationNumber('ca1233'));
+            registrationNumbers.addRegistrationNumber('ca345345');
+            assert.equal('CA 345-345', registrationNumbers.formatRegistrationNumber('ca345345'));
         })
     });
 
     context("Given an invalid registration number", function(){
         const registrationNumbers = RegistrationNumbers();
         it("should return an invalid registration number error", function(){
-            registrationNumbers.addRegistrationNumber('cd1233');
+            registrationNumbers.addRegistrationNumber('cd123876');
             assert.equal('Invalid registration number', registrationNumbers.getErrorMessage());
+        });
+    });
+
+    context("Given small digit registration number", function(){
+        const registrationNumbers = RegistrationNumbers();
+        it("should return a registration number error", function(){
+            registrationNumbers.addRegistrationNumber('ca236');
+            assert.equal('Registration contains atleast 6 digits', registrationNumbers.getErrorMessage());
         });
     });
 
@@ -28,8 +36,8 @@ describe("Registration numbers project", function(){
     context("Given the same registration numbers", function(){
         const registrationNumbers = RegistrationNumbers();
         it("should return an error saying registration number already exists", function(){
-            registrationNumbers.addRegistrationNumber('ca123');
-            registrationNumbers.addRegistrationNumber('ca123');
+            registrationNumbers.addRegistrationNumber('ca123456');
+            registrationNumbers.addRegistrationNumber('ca123456');
             assert.equal('Registration number already exists', registrationNumbers.getErrorMessage());
         });
     });
@@ -45,18 +53,18 @@ describe("Registration numbers project", function(){
     context("Formatting registration numbers", function(){
         const registrationNumbers = RegistrationNumbers();
         it("should be able to format registration numbers", function(){
-            assert.equal('CA 235', registrationNumbers.formatRegistrationNumber('Ca235'));
+            assert.equal('CA 123-345', registrationNumbers.formatRegistrationNumber('Ca123345'));
         });
     });
 
     context("Filter registration number by town", function(){
         const registrationNumbers = RegistrationNumbers();
         it("Should be able to return a filtered registration numbers by that town", function(){
-            registrationNumbers.addRegistrationNumber('ca1233');
-            registrationNumbers.addRegistrationNumber('cj1344');
-            registrationNumbers.addRegistrationNumber('cy2344');
+            registrationNumbers.addRegistrationNumber('ca123563');
+            registrationNumbers.addRegistrationNumber('cj134874');
+            registrationNumbers.addRegistrationNumber('cy234498');
             var results = registrationNumbers.getRegistrationNumbers('capetown');
-            assert.deepEqual(['ca1233'], results);
+            assert.deepEqual(['ca123563'], results);
         });
     });
 });
